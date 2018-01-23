@@ -1,5 +1,6 @@
 import { PluginObject } from 'vue'
-import { VueCycleMixin } from './mixin';
+import { VueCycleDOMMixin } from './mixin/dom';
+import { VueCycleRunMixin } from './mixin/run';
 import { VueCycleDomDirective } from './directives/dom'
 import { fromCustomEvent } from './methods/fromCustomEvent'
 import { watchProp } from './methods/watchProp'
@@ -7,7 +8,8 @@ import { VueCycleConfiguration } from './index.d'
 
 const VueCycle: PluginObject<VueCycleConfiguration> = {
   install (Vue, config = { directive: 'xstream' }) {
-    Vue.mixin(VueCycleMixin)
+    Vue.mixin(VueCycleDOMMixin)
+    Vue.mixin(VueCycleRunMixin)
     Vue.directive(config.directive, VueCycleDomDirective)
     Vue.prototype.$fromCustomEvent = fromCustomEvent
     Vue.prototype.$watchProp = watchProp

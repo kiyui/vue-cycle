@@ -2,7 +2,7 @@ import Vue, { ComponentOptions } from 'vue'
 import xs, { Listener, Stream } from 'xstream'
 import { adapt } from '@cycle/run/lib/adapt';
 
-export const VueCycleMixin: ComponentOptions<Vue> = {
+export const VueCycleDOMMixin: ComponentOptions<Vue> = {
   created () {
     if (!this.$_dom_source) {
       this.$_dom_source = {}
@@ -44,11 +44,6 @@ export const VueCycleMixin: ComponentOptions<Vue> = {
           return adapt(dom$);
         }
       }
-    }
-  },
-  mounted() {
-    if (this.$options.$_cycle_app && this.$options.$_cycle_run) {
-      this.$options.$_cycle_run.call(this, (sources: any) => this.$options.$_cycle_app.call(this, sources))
     }
   }
 }
