@@ -1,5 +1,11 @@
 import xs, { Listener, Stream } from 'xstream'
 
+/**
+ * An `xstream` wrapper for `vm.$on` events
+ * @function fromCustomEvent
+ * @param {string} eventName - Name of the custom event
+ * @returns {Stream} `xstream` instance of custom event
+ */
 export function fromCustomEvent<T> (eventName: string): Stream<T> {
   return xs.create({
     start: (listener: Listener<T>) => {
