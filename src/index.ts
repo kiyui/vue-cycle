@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue'
-import { VueCycleDOMMixin } from './mixin/dom';
-import { VueCycleRunMixin } from './mixin/run';
+import { VueCycleDOMMixin } from './mixins/dom';
+import { VueCycleRunMixin } from './mixins/run';
 import { VueCycleDomDirective } from './directives/dom'
 import { fromCustomEvent } from './methods/fromCustomEvent'
 import { watchProp } from './methods/watchProp'
@@ -18,7 +18,8 @@ const VueCycle: PluginObject<VueCycleConfiguration> = {
 
 export default VueCycle
 export {
-  VueCycleMixin,
+  VueCycleDOMMixin,
+  VueCycleRunMixin,
   VueCycleDomDirective,
   fromCustomEvent,
   watchProp
