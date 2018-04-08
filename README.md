@@ -12,14 +12,13 @@ A **Vue** plugin for injecting **Cycle.js** apps, batteries included.
 - Injected helper methods that make writing Cycle-style components easier
 
 ## Usage
-VueCycle is currently not published on `npm` as it is still considered beta,
-and APIs may change over time. Consider it as `/dev/null` for now.
+Install: `npm install vue-cycle` (Please note this plugin is still in development)
 
 ### Installing plugin
 VueCycle is available as a global plugin with very minimal configuration:
 
 ```javascript
-import VueCycle from '/dev/null'
+import VueCycle from 'vue-cycle'
 
 Vue.use(VueCycle, {
   directive: 'xstream'
@@ -31,7 +30,7 @@ If you do not want to install VueCycle as a global plugin, you can compose
 and use parts of the plugin you want instead:
 
 ```javascript
-import { VueCycleDOMMixin, VueCycleRunMixin, VueCycleDomDirective } from '/dev/null'
+import { VueCycleDOMMixin, VueCycleRunMixin, VueCycleDomDirective } from 'vue-cycle'
 
 export default {
   mixins: [VueCycleDOMMixin, VueCycleRunMixin],

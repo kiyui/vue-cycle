@@ -1,6 +1,6 @@
 {
   "name": "vue-cycle",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Cycle.js integration for Vue components",
   "main": "./dist/index.js",
   "types": "./src/index.d.ts",
@@ -10,7 +10,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "standard src/**.ts",
-    "lint:fix": "standard src/**.ts"
+    "lint:fix": "standard src/**.ts",
+    "dist": "tsc"
   },
   "repository": {
     "type": "git",
@@ -54,9 +55,8 @@
   },
   "dependencies": {
     "@cycle/run": "^4.1.0",
-    "vue": "^2.5.13",
-    "vue-template-compiler": "^2.5.13",
-    "xstream": "^11.1.0"
+    "vue": "^2.5.16",
+    "xstream": "^11.2.0"
   },
   "devDependencies": {
     "@cycle/time": "^0.12.0",
@@ -71,6 +71,7 @@
     "ts-jest": "^22.0.1",
     "typescript": "^2.6.2",
     "typescript-eslint-parser": "^12.0.0",
-    "vue-jest": "^1.4.0"
+    "vue-jest": "^1.4.0",
+    "vue-template-compiler": "^2.5.16"
   }
 }
