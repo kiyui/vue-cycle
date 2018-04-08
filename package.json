@@ -55,9 +55,8 @@
   },
   "dependencies": {
     "@cycle/run": "^4.1.0",
-    "vue": "^2.5.13",
-    "vue-template-compiler": "^2.5.13",
-    "xstream": "^11.1.0"
+    "vue": "^2.5.16",
+    "xstream": "^11.2.0"
   },
   "devDependencies": {
     "@cycle/time": "^0.12.0",
