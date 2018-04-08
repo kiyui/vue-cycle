@@ -35,10 +35,10 @@ import { VueCycleConfiguration } from './index.d'
  * and use parts of the plugin you want instead:
  *
  * ```javascript
- * import { VueCycleMixin, VueCycleDomDirective } from '/dev/null'
+ * import { VueCycleDOMMixin, VueCycleRunMixin, VueCycleDomDirective } from '/dev/null'
  *
  * export default {
- *   mixins: [VueCycleMixin],
+ *   mixins: [VueCycleDOMMixin, VueCycleRunMixin],
  *   directives: {
  *     xstream: VueCycleDomDirective
  *   }
@@ -99,6 +99,23 @@ import { VueCycleConfiguration } from './index.d'
  * }
  * </script>
  * ```
+ *
+ * VueCycle injects a custom `xstream` directive that is used for identifying
+ * events on the custom DOM driver. See the *directive* documentation for more
+ * information.
+ *
+ * The methods `$_cycle_app` and `$_cycle_run` are a core part of VueCycle
+ * where `$_cycle_app` if where you can define your primary component logic
+ * and `$_cycle_run` is where you perform the side-effects. You can here make
+ * use of HOCs that do not inject to the DOM, such as `cycle-onionify`.
+ *
+ * ## API
+ * VueCycle consists of multiple components:
+ * * `VueCycleDOMMixin` mixin
+ * * `VueCycleRunMixin` mixin
+ * * `VueCycleDomDirective` directive
+ * * `fromCustomEvent` injected method
+ * * `watchProp` injected method
  */
 const VueCycle: PluginObject<VueCycleConfiguration> = {
   install (Vue, config = { directive: 'xstream' }) {
