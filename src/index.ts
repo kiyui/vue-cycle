@@ -8,6 +8,7 @@ import { VueCycleConfiguration } from './index.d'
 
 /**
  * # VueCycle
+ * [![Build Status](https://travis-ci.org/TimurKiyivinski/vue-cycle.svg?branch=master)](https://travis-ci.org/TimurKiyivinski/vue-cycle)
  * A **Vue** plugin for injecting **Cycle.js** apps, batteries included.
  *
  * ### Features
