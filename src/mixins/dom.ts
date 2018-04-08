@@ -2,14 +2,26 @@ import Vue, { ComponentOptions } from 'vue'
 import xs, { Listener, Stream } from 'xstream'
 import { adapt } from '@cycle/run/lib/adapt';
 
+/**
+ * ## VueCycleDOMMixin
+ * Injects the `$domDriver` instance to the Vue component on `created`.
+ */
 export const VueCycleDOMMixin: ComponentOptions<Vue> = {
   created () {
     if (!this.$_dom_source) {
       this.$_dom_source = {}
     }
 
+    /**
+     * The injected DOM driver instance
+     */
     this.$domDriver = () => {
       return {
+        /**
+         * @function on
+         * @param {string} eventName - Source event name
+         * @returns {Stream} Injected stream from `xstream` directive
+         */
         on: (eventName: string) => {
           const dom$ = xs.create({
             start: (listener: Listener<any>) => {
