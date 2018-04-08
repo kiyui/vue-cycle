@@ -10,7 +10,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "standard src/**.ts",
-    "lint:fix": "standard src/**.ts"
+    "lint:fix": "standard src/**.ts",
+    "dist": "tsc"
   },
   "repository": {
     "type": "git",
