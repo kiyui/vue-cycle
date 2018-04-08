@@ -17,6 +17,17 @@ interface DOMSourceDirective extends VNodeDirective {
   value : DOMSourceValue | string;
 }
 
+/**
+ * ## VueCycleDomDirective
+ * The VueCycle `xstream` directive
+ *
+ * The directive can be used the following ways:
+ * * `v-xstream:$event="'$sourceName'"`
+ * * `v-xstream:$event="{ name: '$sourceName', data: 'some_value' }"`
+ *
+ * Where `$event` is the name of the DOM or Vue custom event, and `$sourceName`
+ * being the name of the event that will be used for filtering in the DOM driver.
+ */
 export const VueCycleDomDirective = {
   bind (el: DOMSourceHTMLElement, binding: DOMSourceDirective, vnode: VNode) {
     if (typeof (binding.value) === 'undefined') {
